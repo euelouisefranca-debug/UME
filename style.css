@@ -1,0 +1,376 @@
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #3705ac, #080349); /* fundo em gradiente */
+  min-height: 100vh; /* garante que o gradiente cubra toda a tela */
+  color: white;
+}
+/* Header */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #071033;
+  padding: 15px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 5px 0;
+  background-color: #0c163a;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header a {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #ffcc00;
+}
+
+header img {
+  float: right;
+}
+
+/* Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 200px;
+  background: #0c163a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 900;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar .hamburger {
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  margin: 15px 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.sidebar button:hover {
+  color: #ffcc00;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.open ~ .main {
+  margin-left: 200px;
+}
+
+/* Carrossel */
+.carrossel {
+  background-color: #0c163a;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.carrossel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.carrossel img.ativo {
+  display: block;
+}
+
+.carrossel .label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: orange;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 15px;
+}
+
+/* Indicadores */
+.indicadores {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.indicadores div {
+  width: 12px;
+  height: 12px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.indicadores .ativo {
+  background: gold;
+}
+
+/* Cards */
+.card {
+  background: #26025c;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 1100px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.card img {
+  width: 30%;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: #ffffff;
+}
+
+/* botão hamburguer circular (sem fundo colorido) */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 125;               /* tamanho do botão */
+  height: 125px;              /* mesmo que a largura -> botão circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  z-index: 800;             /* fica acima de quase tudo */
+  padding: 0;                /* usar largura/altura fixas em vez de padding */
+  border-radius: 50%;        /* deixa circular */
+  background: transparent;   /* sem cor de fundo */
+  overflow: hidden;          /* corta a imagem para caber no círculo */
+  box-sizing: border-box;
+}
+
+/* ajusta a div interna que envolve a imagem (no seu HTML existe .iconesidebarr) */
+.hamburger .iconesidebarr {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* redimensiona a imagem interna para caber bem no círculo */
+.hamburger .iconesidebar {
+  width: 125px;               /* tamanho do ícone dentro do botão */
+  height: 125px;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;        /* opcional: faz a própria imagem ficar arredondada */
+}
+
+h1 {
+      background: #0350a9;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+  margin: 20px auto;
+  margin: 5px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card1 {  
+  background: #071033;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+
+.card1 img {
+  width: 30%;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.card h1{
+text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+.formula{
+  
+    /* 2. Habilita o Flexbox */
+    display: flex; 
+    
+    /* 3. Centraliza o formulário na horizontal */
+    justify-content: center; 
+}
+
+.formula select{
+  width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #1a1d4d;
+    color: #fff;
+}
+
+.formula ,{
+      background: #4c00ff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formula1{
+  
+ /* 1. Ocupa a altura total da viewport (tela) */
+    min-height: 100vh; 
+    
+    /* 2. Habilita o Flexbox */
+    display: flex; 
+    
+    /* 3. Centraliza o formulário na horizontal */
+    justify-content: center; 
+    
+    /* 4. Centraliza o formulário na vertical */
+    align-items: center;
+}
+
+.butt{
+      background: #0022ff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+form {
+    background-color: #0c163a; /* azul bem escuro */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    width: 320px;
+    text-align: center;
+}
+
+form form1 label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #d0d0ff; /* tom claro puxando pro roxo */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #1a1d4d;
+    color: #fff;
+}
+
+form input::placeholder {
+    color: #bbb;
+}
+
+button {
+    background: #4c00ff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background: #3600b2;
+}
+
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    display: block;
+    color: #8a7aff;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    color: #c0b0ff;
+    text-decoration: underline;
+}
